@@ -3182,9 +3182,9 @@ public class GUIMain extends javax.swing.JFrame {
     private void jMenuItem97ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem97ActionPerformed
         // About  
         JOptionPane.showMessageDialog(new JFrame(),
-            "Eggs are not supposed to be green.",
+            "The software was produced by David Kim, TLC Media Team\nVersion 4.15.14.v1",
             "새생명교회 행정 프로그램",
-        JOptionPane.PLAIN_MESSAGE);  
+            JOptionPane.PLAIN_MESSAGE);  
     }//GEN-LAST:event_jMenuItem97ActionPerformed
       
     public AboutWorksheet getAWS() throws BiffException, IOException, RowsExceededException, WriteException { 
