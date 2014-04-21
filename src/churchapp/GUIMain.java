@@ -1440,6 +1440,7 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // Update Button
         try {
             try {
                 getAWS().update();
@@ -1577,6 +1578,7 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        //Add
         jTextField1.setText("이름"); jTextField1.setForeground(Color.LIGHT_GRAY); jTextField1.setFocusable(false);
         jTextField2.setFocusable(true); jTextField2.setText(""); jTextField2.requestFocusInWindow();
         jTextField3.setFocusable(true); jTextField3.setText("");
@@ -1603,7 +1605,19 @@ public class GUIMain extends javax.swing.JFrame {
         jButton5.setEnabled(false); 
         jButton6.setEnabled(false);
         jCheckBox1.setEnabled(true);
-        
+        try {
+            getAWS().setTrackNumber();
+        } catch (BiffException | IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+        } catch (RowsExceededException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+        } catch (WriteException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace(); 
+        }
+        workbook.close();
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1628,8 +1642,7 @@ public class GUIMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField16FocusGained
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        jTextField1.setFocusable(true);
-        jTextField1.requestFocus();
+        jTextField1.setFocusable(true); 
         jTextField1.setText("");
         jTextField1.setForeground(Color.BLACK);
         jTextField16.setForeground(Color.LIGHT_GRAY);
@@ -1664,7 +1677,7 @@ public class GUIMain extends javax.swing.JFrame {
         jButton4.setEnabled(true);
         jButton5.setEnabled(false); 
         jButton6.setEnabled(false);
-        jCheckBox1.setEnabled(true);
+        jCheckBox1.setEnabled(true); 
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -3227,7 +3240,7 @@ public class GUIMain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {  
-                new GUIMain().setVisible(true);
+                new GUIMain().setVisible(true); 
             }
         }); 
     }

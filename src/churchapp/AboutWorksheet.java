@@ -155,6 +155,10 @@ public class AboutWorksheet {
         }
     }
     
+    public void setTrackNumber() {
+        trackNumber = state.length; 
+    }
+    
     public void update() throws IOException, WriteException { 
         WritableWorkbook wworkbook = Workbook.createWorkbook(new File("roster.xls"), workbook);
         WritableSheet wsheet = wworkbook.getSheet(0);   
@@ -228,7 +232,7 @@ public class AboutWorksheet {
         DefaultTableModel table = setupMenu();
 
         for (int j = 1; j <= grp; j++) {
-            for (int i = 1; i < state.length; i++) {  
+            for (int i = 0; i < state.length; i++) {  
                 if (dst == 50) {
                     if (district[i].getContents().trim().equals("EM")) {
                         if (group[i].getContents().trim().equals(String.valueOf(j))) {
@@ -261,7 +265,7 @@ public class AboutWorksheet {
  
         DefaultTableModel table = setupMenu();
 
-        for (int i = 1; i < state.length; i++) {  
+        for (int i = 0; i < state.length; i++) {  
             if (dst == 50) {
                 if (district[i].getContents().trim().equals("EM")) {
                     if (group[i].getContents().trim().equals(String.valueOf(grp))) {
@@ -292,7 +296,7 @@ public class AboutWorksheet {
 
         DefaultTableModel table = setupMenu();
 
-        for (int i = 1; i < state.length; i++) {  
+        for (int i = 0; i < state.length; i++) {  
             displayItems(i, table);
         }
 
@@ -308,12 +312,12 @@ public class AboutWorksheet {
  
         DefaultTableModel table = setupMenu();
 
-        for (int i = 1; i < state.length; i++) {   
+        for (int i = 0; i < state.length; i++) {   
             if (title[i].getContents().trim().equals(ttitle)) { 
                 displayItems(i, table);  
             } 
         }
-        
+       
         if (ttitle.equals("목사") || ttitle.equals("전도사")) {
             setupFrame(table, 1300, 400, ttitle, 0, 0);
         } else if (ttitle.equals("장로")) {
@@ -420,7 +424,7 @@ public class AboutWorksheet {
         }
     }
     
-    private DefaultTableModel setupMenu() {
+    private DefaultTableModel setupMenu() { 
         Object[] columnNames = {"교구", "구역", "이름", "First Name", 
             "Last Name", "직분", "배우자", "자녀", "집전화", "핸드폰전화", "Street", 
             "City", "Zip", "비활동"};
@@ -431,13 +435,13 @@ public class AboutWorksheet {
     
     private void displayItems(int i, DefaultTableModel table) { 
         table.addRow(new Object[] {district[i].getContents(), 
-        group[i].getContents(),
-        koreanName[i].getContents(), firstName[i].getContents(),
-        lastName[i].getContents(), title[i].getContents(), 
-        spouse[i].getContents(), child[i].getContents(), 
-        hphone[i].getContents(),cphone[i].getContents(), 
-        street[i].getContents(), city[i].getContents(), 
-        zip[i].getContents(),status[i].getContents()}); 
+            group[i].getContents(),
+            koreanName[i].getContents(), firstName[i].getContents(),
+            lastName[i].getContents(), title[i].getContents(), 
+            spouse[i].getContents(), child[i].getContents(), 
+            hphone[i].getContents(),cphone[i].getContents(), 
+            street[i].getContents(), city[i].getContents(), 
+            zip[i].getContents(),status[i].getContents()}); 
     }
      
     public void saveList() throws RowsExceededException, WriteException, IOException {
