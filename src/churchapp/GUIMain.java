@@ -21,7 +21,7 @@ import jxl.write.biff.RowsExceededException;
 /**
  *
  * @author David Kim
- * @date
+ * 
  */
 public class GUIMain extends javax.swing.JFrame {
 
