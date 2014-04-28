@@ -20,7 +20,7 @@ import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 /**
  *
- * @author David Y. Kim
+ * @author David Kim
  */
 public class GUIMain extends javax.swing.JFrame {
 
